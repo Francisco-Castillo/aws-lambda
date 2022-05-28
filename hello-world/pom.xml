@@ -18,5 +18,13 @@
             <artifactId>aws-lambda-java-core</artifactId>
             <version>${aws.lambda.version}</version>
         </dependency>
+          
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 </project>
