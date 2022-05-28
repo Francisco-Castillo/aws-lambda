@@ -10,14 +10,15 @@ import com.amazonaws.services.lambda.runtime.RequestHandler;
 
 /**
  *
- * @author fcastillo
+ * @author Francisco Castillo
  */
-public class HandlerApp implements RequestHandler<Object, Object> {
+public class HandlerApp implements RequestHandler<HandlerRequest, HandlerResponse> {
 
-  @Override
-  public String handleRequest(Object i, Context cntxt) {
-    System.out.println("Hello World");
-    return null;
-  }
+    @Override
+    public HandlerResponse handleRequest(HandlerRequest request, Context ctx) {
+        String requestName = request.getName();
+        ctx.getLogger().log("Hola " + requestName);
+        return new HandlerResponse("Hola " + requestName);
+    }
 
 }
